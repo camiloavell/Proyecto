@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "i40cKbP93Jc5PnT1YM4/DiIsbK909l0xk68MZJwkaLfjBk5U7CZf22jcOb1kNfzV/KUZlvfBono5eAHLRjdQmg==",
+  "success": true,
+  "projectFilePath": "/Users/sergiopina/Desktop/ProyectoCiclo3.App/ProyectoCiclo3.App.Servicios/ProyectoCiclo3.App.Servicios.csproj",
+  "expectedPackageFiles": [
+    "/Users/sergiopina/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/sergiopina/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/sergiopina/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/Users/sergiopina/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/Users/sergiopina/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/Users/sergiopina/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
