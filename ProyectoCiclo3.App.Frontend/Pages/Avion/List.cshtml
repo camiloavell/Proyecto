@@ -1,52 +1,39 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.ListAvionModel
 @{
 }
  
+<h1>Listado de Aviones</h1>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Modelo</th>
-      <th scope="col">Cantidad Motores</th>
-      <th scope="col">Velocidad</th>
-      <th scope="col">Capacidad</th>
+      <th style="text-align: center;" scope="col">#</th>
+      <th style="text-align: center;" scope="col">Marca</th>
+      <th style="text-align: center;" scope="col">Modelo</th>
+      <th style="text-align: center;" scope="col">Número asientos</th>
+      <th style="text-align: center;" scope="col">Número baños</th>
+      <th style="text-align: center;" scope="col">Capacidad máxima</th>
+      <th style="text-align: center;" scope="col">Acción</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Airbus 319</td>
-      <td>2</td>
-      <td>871</td>
-      <td>156</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Airbus A330</td>
-      <td>2</td>
-      <td>913</td>
-      <td>335</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Boeing 737</td>
-      <td>2</td>
-      <td>952</td>
-      <td>126</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Boeing 747</td>
-      <td>2</td>
-      <td>805</td>
-      <td>366</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Airbus A300</td>
-      <td>2</td>
-      <td>1061</td>
-      <td>300</td>
-    </tr>     
+    @foreach (var avion in Model.Aviones)
+    {
+        <tr>
+            <td>@avion.id</td>
+            <td>@avion.marca</td>
+            <td>@avion.modelo</td>
+            <td>@avion.numero_asientos</td>
+            <td>@avion.numero_banos</td>
+            <td>@avion.capacidad_maxima</td>
+            <td>
+              <div class="row">
+                <a class="col-12 col-lg-4 col-md-12 col-sm-12 btn btn-info" asp-page="./Details" asp-route-avionId="@avion.id">Ver</a>
+                <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-info" asp-page="./Edit" asp-route-avionId="@avion.id">Editar</a>
+                <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-danger" href="">Eliminar</a>
+              </div>
+            </td>
+        </tr>
+    }   
   </tbody>
 </table>
