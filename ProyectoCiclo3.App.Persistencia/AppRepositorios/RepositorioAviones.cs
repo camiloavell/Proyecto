@@ -9,14 +9,13 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
     {
         List<Aviones> aviones;
  
-    public RepositorioAviones()
+        public RepositorioAviones()
         {
             aviones= new List<Aviones>()
             {
-                new Aviones{id=1,marca="Audi",modelo= 2020,kilometraje= 100000,numero_asientos= 4,placa= "POP678"},
-                new Aviones{id=2,marca="Toyota",modelo= 2021,kilometraje= 90000,numero_asientos= 16,placa= "OIU859"},
-                new Aviones{id=3,marca="Mazda",modelo= 2000,kilometraje= 150000,numero_asientos= 24,placa= "YUH859"}
- 
+                new Aviones{id=1,marca="Airbus",modelo= 2020,numero_asientos= 4, numero_banos= 4, capacidad_maxima=150},
+                new Aviones{id=2,marca="Boeing 787",modelo= 2021,numero_asientos= 16, numero_banos= 4, capacidad_maxima=200},
+                new Aviones{id=3,marca="Airbus A319",modelo= 2000,numero_asientos= 24, numero_banos= 4, capacidad_maxima=80}
             };
         }
  
@@ -25,8 +24,21 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             return aviones;
         }
  
-        public Aviones GetBusWithId(int id){
+        public Aviones GetAvionWithId(int id){
             return aviones.SingleOrDefault(b => b.id == id);
         }
+
+    public Aviones Update(Aviones newAvion){
+            var avion= aviones.SingleOrDefault(b => b.id == newAvion.id);
+            if(avion != null){
+                avion.marca = newAvion.marca;
+                avion.modelo = newAvion.modelo;
+                avion.numero_banos = newAvion.numero_banos;
+                avion.numero_asientos = newAvion.numero_asientos;
+                avion.capacidad_maxima = newAvion.capacidad_maxima;
+            }
+        return avion;
+        }
+
     }
 }
