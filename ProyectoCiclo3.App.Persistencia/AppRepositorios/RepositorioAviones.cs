@@ -28,17 +28,27 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             return aviones.SingleOrDefault(b => b.id == id);
         }
 
-    public Aviones Update(Aviones newAvion){
-            var avion= aviones.SingleOrDefault(b => b.id == newAvion.id);
-            if(avion != null){
-                avion.marca = newAvion.marca;
-                avion.modelo = newAvion.modelo;
-                avion.numero_banos = newAvion.numero_banos;
-                avion.numero_asientos = newAvion.numero_asientos;
-                avion.capacidad_maxima = newAvion.capacidad_maxima;
-            }
-        return avion;
+        public Aviones Create(Aviones newAvion)
+        {
+            return newAvion;
         }
 
-    }
+        public void Delete(int id)
+        {
+
+        }        
+
+        public Aviones Update(Aviones newAvion){
+                var avion= aviones.SingleOrDefault(b => b.id == newAvion.id);
+                if(avion != null){
+                    avion.marca = newAvion.marca;
+                    avion.modelo = newAvion.modelo;
+                    avion.numero_banos = newAvion.numero_banos;
+                    avion.numero_asientos = newAvion.numero_asientos;
+                    avion.capacidad_maxima = newAvion.capacidad_maxima;
+                }
+            return avion;
+            }
+
+        }
 }
