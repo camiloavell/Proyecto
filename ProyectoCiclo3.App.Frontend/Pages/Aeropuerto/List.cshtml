@@ -1,0 +1,37 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.ListaAeropuertoModel
+@{
+}
+ 
+<h1>Listado de Aeropuertos</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th style="text-align: center;" scope="col">#</th>
+      <th style="text-align: center;" scope="col">Sigla</th>
+      <th style="text-align: center;" scope="col">Nombre</th>
+      <th style="text-align: center;" scope="col">Pais</th>
+      <th style="text-align: center;" scope="col">Tipo</th>
+      <th style="text-align: center;" scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var aeropuerto in Model.Aeropuertos)
+    {
+        <tr>
+            <td>@aeropuerto.id</td>
+            <td>@aeropuerto.sigla</td>
+            <td>@aeropuerto.nombre</td>
+            <td>@aeropuerto.pais</td>
+            <td>@aeropuerto.tipo</td>
+            <td>
+              <div class="row">
+                <a class="col-12 col-lg-4 col-md-12 col-sm-12 btn btn-info" asp-page="./Details" asp-route-aeropuertoId="@aeropuerto.id">Ver</a>
+                <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-info" asp-page="./Edit" asp-route-aeropuertoId="@aeropuerto.id">Editar</a>
+                <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-danger" href="">Eliminar</a>
+              </div>
+            </td>
+        </tr>
+    }   
+  </tbody>
+</table>

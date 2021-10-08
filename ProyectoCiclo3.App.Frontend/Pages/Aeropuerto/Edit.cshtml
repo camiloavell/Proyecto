@@ -1,0 +1,22 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.EditAeropuertoModel
+@{
+    var aeropuerto = Model.Aeropuerto;
+}
+
+<div class="text-center">
+  <form method="POST">
+    <label for="id" class="form-label">Id:</label>
+    <input type="text" class="form-control" id="id" name="id" placeholder="Id" asp-for="@aeropuerto.id">
+    <label for="sigla" class="form-label">Sigla:</label>
+    <input type="text" class="form-control" id="sigla" name="sigla" placeholder="sigla" asp-for="@aeropuerto.sigla">
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre" asp-for="@aeropuerto.nombre">
+    <label for="pais" class="form-label">Pais: </label>
+    <input type="text" class="form-control" id="pais" name="pais" placeholder="Pais" asp-for="@aeropuerto.pais">
+    <label for="tipo" class="form-label">Tipo:</label>
+    <input type="text" class="form-control" id="tipo" name="tipo" placeholder="Numero baños" asp-for="@aeropuerto.tipo">
+    <hr>
+    <button type="submit" class="btn btn-success">Enviar</button>
+  </form>
+</div>
