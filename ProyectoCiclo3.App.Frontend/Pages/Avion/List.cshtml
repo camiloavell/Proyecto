@@ -30,7 +30,10 @@
               <div class="row">
                 <a class="col-12 col-lg-4 col-md-12 col-sm-12 btn btn-info" asp-page="./Details" asp-route-avionId="@avion.id">Ver</a>
                 <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-info" asp-page="./Edit" asp-route-avionId="@avion.id">Editar</a>
-                <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-danger" href="">Eliminar</a>
+                <form method="POST">
+                  <input type="number" class="d-none" id="id" asp-for="@avion.id">
+                  <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-danger" href="">Eliminar</a>
+                </form>
               </div>
             </td>
         </tr>

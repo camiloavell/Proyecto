@@ -7,41 +7,44 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
 {
     public class RepositorioAeropuertos
     {
-        List<Aeropuertos> aeropuertos;
- 
-        public RepositorioAeropuertos()
-        {
-            aeropuertos= new List<Aeropuertos>()
-            {
-                new Aeropuertos{id=1,sigla="SKAR - AXM",nombre= "ARMENIA - El Eden",pais= "Colombia", tipo= "Internacional"},
-                new Aeropuertos{id=2,sigla="SKBG - BGA",nombre= "BUCARAMANGA - Palonegro",pais= "Colombia", tipo= "Internacional"},
-                new Aeropuertos{id=3,sigla="SKBO -BOG",nombre= "BOGOTA - El Dorado",pais= "Colombia", tipo= "Internacional"},
-                new Aeropuertos{id=4,sigla="SKBQ - BAQ",nombre= "BARRANQUILLA - Ernesto Cortissoz",pais= "Colombia", tipo= "Internacional"},
-                new Aeropuertos{id=5,sigla="SKCC - CUC",nombre= "CUCUTA - Camilo Daza",pais= "Colombia", tipo= "Internacional"},
-                new Aeropuertos{id=6,sigla="SKCG - CTG",nombre= "CARTAGENA - Rafael Nunez",pais= "Colombia", tipo= "Internacional"},
-                new Aeropuertos{id=7,sigla="SKCL - CLO",nombre= "CALI - Alfonso Bonilla Aragon",pais= "Colombia", tipo= "Internacional"},
-                new Aeropuertos{id=8,sigla="SKCO - TCO",nombre= "TUMACO - La Florida",pais= "Colombia", tipo= "Nacional"}
-            };
-        }
+        private readonly AppContext _appContext = new AppContext(); 
  
         public IEnumerable<Aeropuertos> GetAll()
         {
-            return aeropuertos;
+            return _appContext.Aeropuertos;
         }
  
         public Aeropuertos GetAeropuertoWithId(int id){
-            return aeropuertos.SingleOrDefault(b => b.id == id);
+            return _appContext.Aeropuertos.Find(id);
         }
 
-    public Aeropuertos Update(Aeropuertos newAeropuerto){
-            var aeropuerto= aeropuertos.SingleOrDefault(b => b.id == newAeropuerto.id);
+        public Aeropuertos Create(Aeropuertos newAeropuerto)
+        {
+            var addAeropuerto = _appContext.Aeropuertos.Add(newAeropuerto);
+            _appContext.SaveChanges();
+            return addAeropuerto.Entity;
+        }
+
+        public void Delete(int id)
+        {
+            var aeropuerto = _appContext.Aeropuertos.Find(id);
+            if (aeropuerto == null)
+                return;
+            _appContext.Aeropuertos.Remove(aeropuerto);
+            _appContext.SaveChanges();
+        }
+
+        public Aeropuertos Update(Aeropuertos newAeropuerto){
+            var aeropuerto = _appContext.Aeropuertos.Find(newAeropuerto.id);
             if(aeropuerto != null){
                 aeropuerto.sigla = newAeropuerto.sigla;
                 aeropuerto.nombre = newAeropuerto.nombre;
                 aeropuerto.pais = newAeropuerto.pais;
                 aeropuerto.tipo = newAeropuerto.tipo;
+                //Guardar en base de datos
+                _appContext.SaveChanges();
             }
-        return aeropuerto;
+            return aeropuerto;
         }
 
     }

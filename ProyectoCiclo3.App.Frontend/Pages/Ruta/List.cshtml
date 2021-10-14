@@ -24,9 +24,12 @@
             <td>@ruta.tiempo_estimado</td>
             <td>
               <div class="row">
-                <a class="col-12 col-lg-4 col-md-12 col-sm-12 btn btn-info" asp-page="./Details" asp-route-avionId="@ruta.id">Ver</a>
-                <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-info" asp-page="./Edit" asp-route-avionId="@ruta.id">Editar</a>
-                <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-danger" href="">Eliminar</a>
+                <a class="col-12 col-lg-4 col-md-12 col-sm-12 btn btn-info" asp-page="./Details" asp-route-rutaId="@ruta.id">Ver</a>
+                <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-info" asp-page="./Edit" asp-route-rutaId="@ruta.id">Editar</a>
+                <form method="POST">
+                  <input type="number" class="d-none" id="id" asp-for="@ruta.id">
+                  <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-danger" href="">Eliminar</a>
+                </form>
               </div>
             </td>
         </tr>
