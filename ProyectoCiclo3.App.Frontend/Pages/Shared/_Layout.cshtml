@@ -17,43 +17,50 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <!--
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        -->
-                        <!--
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Usuario/Create">Crear Usuario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Usuario/List">Listar Usuarios</a>
-                        </li>
-                        -->
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Avion/Create">Crear avion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Avion/List">Listar aviones</a>
-                        </li>           
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Aeropuerto/Create">Crear aeropuerto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Aeropuerto/List">Listar aeropuertos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Ruta/Create">Crear ruta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Ruta/List">Listar rutas</a>
-                        </li>
+                    @Html.Partial("_LoginPartial")
+                    @using Microsoft.AspNetCore.Identity
+                    @inject SignInManager<IdentityUser> SignInManager
+                    @if (SignInManager.IsSignedIn(User))
+                    {
 
-                    </ul>
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            </li>
+                            <!--
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            </li>
+                            -->
+                            <!--
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Usuario/Create">Crear Usuario</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Usuario/List">Listar Usuarios</a>
+                            </li>
+                            -->
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Avion/Create">Crear avion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Avion/List">Listar aviones</a>
+                            </li>           
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Aeropuerto/Create">Crear aeropuerto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Aeropuerto/List">Listar aeropuertos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Ruta/Create">Crear ruta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Ruta/List">Listar rutas</a>
+                            </li>
+
+                        </ul>
+                    }
                 </div>
             </div>
         </nav>
