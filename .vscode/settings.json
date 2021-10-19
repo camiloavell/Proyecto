@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/af59250e-f7df-4d48-a43b-1850ca58639b/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/Minctic2022Aviones",
+    "appService.deploySubpath": "ProyectoCiclo3.App.Frontend/publish"
+}

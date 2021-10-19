@@ -12,25 +12,25 @@
       <th style="text-align: center;" scope="col">Nombre</th>
       <th style="text-align: center;" scope="col">Pais</th>
       <th style="text-align: center;" scope="col">Tipo</th>
-      <th style="text-align: center;" scope="col">Acción</th>
+      <th style="text-align: center;" scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
     @foreach (var aeropuerto in Model.Aeropuertos)
     {
         <tr>
-            <td>@aeropuerto.id</td>
-            <td>@aeropuerto.sigla</td>
-            <td>@aeropuerto.nombre</td>
-            <td>@aeropuerto.pais</td>
-            <td>@aeropuerto.tipo</td>
-            <td>
-              <div class="row">
-                <a class="col-12 col-lg-4 col-md-12 col-sm-12 btn btn-info" asp-page="./Details" asp-route-aeropuertoId="@aeropuerto.id">Ver</a>
-                <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-info" asp-page="./Edit" asp-route-aeropuertoId="@aeropuerto.id">Editar</a>
-                <form method="POST">
+            <td style="text-align: center;">@aeropuerto.id</td>
+            <td style="text-align: center;">@aeropuerto.sigla</td>
+            <td style="text-align: center;">@aeropuerto.nombre</td>
+            <td style="text-align: center;">@aeropuerto.pais</td>
+            <td style="text-align: center;">@aeropuerto.tipo</td>
+            <td style="text-align: center;">
+              <div class="">
+                <a class="btn btn-info" asp-page="./Details" asp-route-aeropuertoId="@aeropuerto.id">Ver</a>
+                <a class="btn btn-info" asp-page="./Edit" asp-route-aeropuertoId="@aeropuerto.id">Editar</a>
+                <form method="POST" class="col-12 p0 m0">
                   <input type="number" class="d-none" id="id" asp-for="@aeropuerto.id">
-                  <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-danger" href="">Eliminar</a>
+                  <a class="btn btn-danger" href="">Eliminar</a>
                 </form>
               </div>
             </td>

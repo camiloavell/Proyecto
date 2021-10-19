@@ -13,26 +13,26 @@
       <th style="text-align: center;" scope="col">Número asientos</th>
       <th style="text-align: center;" scope="col">Número baños</th>
       <th style="text-align: center;" scope="col">Capacidad máxima</th>
-      <th style="text-align: center;" scope="col">Acción</th>
+      <th style="text-align: center;" scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
     @foreach (var avion in Model.Aviones)
     {
         <tr>
-            <td>@avion.id</td>
-            <td>@avion.marca</td>
-            <td>@avion.modelo</td>
-            <td>@avion.numero_asientos</td>
-            <td>@avion.numero_banos</td>
-            <td>@avion.capacidad_maxima</td>
-            <td>
-              <div class="row">
-                <a class="col-12 col-lg-4 col-md-12 col-sm-12 btn btn-info" asp-page="./Details" asp-route-avionId="@avion.id">Ver</a>
-                <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-info" asp-page="./Edit" asp-route-avionId="@avion.id">Editar</a>
+            <td style="text-align: center;">@avion.id</td>
+            <td style="text-align: center;">@avion.marca</td>
+            <td style="text-align: center;">@avion.modelo</td>
+            <td style="text-align: center;">@avion.numero_asientos</td>
+            <td style="text-align: center;">@avion.numero_banos</td>
+            <td style="text-align: center;">@avion.capacidad_maxima</td>
+            <td style="text-align: center;">
+              <div class="">
+                <a class="btn btn-info" asp-page="./Details" asp-route-avionId="@avion.id">Ver</a>
+                <a class="btn btn-info" asp-page="./Edit" asp-route-avionId="@avion.id">Editar</a>
                 <form method="POST">
                   <input type="number" class="d-none" id="id" asp-for="@avion.id">
-                  <a class="col-12 col-lg-4 col-md-6 col-sm-12 btn btn-danger" href="">Eliminar</a>
+                  <a class="btn btn-danger" href="">Eliminar</a>
                 </form>
               </div>
             </td>
